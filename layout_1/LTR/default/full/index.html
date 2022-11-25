@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Dashboard - CREW AutoConsulta</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/layout.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="../../../../global_assets/js/main/jquery.min.js"></script>
+	<script src="../../../../global_assets/js/main/bootstrap.bundle.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="../../../../global_assets/js/plugins/forms/inputs/typeahead/handlebars.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/forms/inputs/alpaca/alpaca.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/forms/inputs/alpaca/price_format.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/ui/prism.min.js"></script>
+	<script src="../../../../global_assets/js/plugins/editors/ckeditor/ckeditor.js"></script>
+	<script src="../../../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script src="assets/js/app.js"></script>
+	<script src="../../../../global_assets/js/demo_pages/alpaca_advanced.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-expand-md navbar-dark shadow ">
+        <div class="navbar-brand">
+            <a href="/Dashboard/Index" class="d-inline-block">
+                <img src="https://autocrew-qa.humboldt.cl/Lib/global_assets/images/logo_light.png" alt="">
+            </a>
+        </div>
+
+        <div class="d-md-none">
+            
+            <a href="#" class="navbar-toggler caret-0" data-toggle="collapse" data-target="#navbar-notify">
+                <i class="icon-mailbox"></i>
+                <span class="badge badge-pill bg-primary-400 ml-auto ml-md-0" id="nav_bar_inbox_span">10</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-user"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse div-only-mobile" id="navbar-notify">
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+
+                    <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
+                        <i class="icon-bubble-notification"></i>
+                        <span class="d-md-none ml-2">Notificaciones</span>
+                        <span class="badge badge-pill bg-primary-400 ml-auto ml-md-0" id="nav_bar_notify_span" style="">10</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-left dropdown-content wmin-md-350">
+                        <div class="dropdown-content-header">
+                            <span class="font-weight-semibold">Notificaciones</span>
+                            <a onclick="NavBar_notify()" class="text-default"><i class="icon-sync"></i></a>
+                        </div>
+
+                        <div class="dropdown-content-body dropdown-scrollable">
+                            <ul class="media-list .nav_bar_notify_content" id="nav_bar_notify_content" style=""><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Biblioteca de documentos Humboldt<div class="text-muted font-size-sm">08-11-2022 09:28:10</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Liberación liquidaciones de sueldo<div class="text-muted font-size-sm">08-07-2022 10:08:21</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Liberación liquidaciones de sueldo<div class="text-muted font-size-sm">08-06-2022 10:15:49</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Liberación liquidaciones de sueldo<div class="text-muted font-size-sm">01-06-2022 17:44:34</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Liberación liquidaciones de sueldo<div class="text-muted font-size-sm">06-04-2022 08:42:39</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Liberación liquidaciones de sueldo<div class="text-muted font-size-sm">06-12-2021 17:41:31</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Biblioteca de documentos Humboldt<div class="text-muted font-size-sm">23-11-2021 09:43:45</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Beneficios Personal de Humboldt<div class="text-muted font-size-sm">23-11-2021 09:43:41</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Biblioteca de documentos Humboldt<div class="text-muted font-size-sm">22-11-2021 23:24:17</div></div></li><li class="media"><div class="mr-3"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body">Beneficios Personal de Humboldt<div class="text-muted font-size-sm">22-11-2021 23:24:11</div></div></li></ul>
+
+                            <ul class="media-list text-center" id="nav_bar_notify_load" style="display: none;">
+                                <i class="icon-spinner2 spinner"></i> Cargando notificaciones...
+                            </ul>
+
+                            <ul class="media-list text-center" id="nav_bar_notify_info" style="display: none;">
+                                <span id="nav_bar_notify_info_msj"></span>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-content-footer justify-content-center p-0" id="nav_bar_notify_more" style="">
+                            <a class="text-grey pb-2 pt-2 cursor-pointer" onclick="ToPerfil(1)"><i class="icon-menu7  pr-2"></i>Ir a mi perfil</a>
+                            <!--href="/Profile"-->
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
+                        <i class="icon-bubbles4"></i>
+                        <span class="d-md-none ml-2">Mensajes</span>
+                        <span class="badge badge-pill bg-teal-400 ml-auto ml-md-0" id="nav_bar_message_span" style="display:none;">2</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-left dropdown-content wmin-md-350">
+                        <div class="dropdown-content-header">
+                            <span class="font-weight-semibold">Mensajes</span>
+                            <a onclick="NavBar_message()" class="text-default"><i class="icon-sync"></i></a>
+                        </div>
+
+                        <div class="dropdown-content-body dropdown-scrollable">
+                            <ul class="media-list" id="nav_bar_message_content" style="display:none;">
+                            </ul>
+
+                            <ul class="media-list text-center" id="nav_bar_message_load" style="display: none;">
+                                <i class="icon-spinner2 spinner"></i> Cargando conversaciones...
+                            </ul>
+
+                            <ul class="media-list text-center" id="nav_bar_message_info" style="">
+                                <span id="nav_bar_message_info_msj">No hay mensajes sin leer</span>
+                            </ul>
+                            <ul class="media-list">
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-content-footer justify-content-center p-0" id="nav_bar_message_more" style="">
+                            <a class="text-grey pb-2 pt-2 cursor-pointer" onclick="ToPerfil(2)"><i class="icon-menu7  pr-2"></i>Ir a mi perfil</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="navbar-nav-link dropdown-toggle caret-0">
+                        <i id="conectionCrew" class="icon-checkmark-circle text-green"></i>
+                        
+                        <span class="d-md-none ml-2" id="conectionCrew_tx">Sincronizado con CREW</span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+            <!--<ul class="navbar-nav">
+
+
+            <li class="nav-item">
+                <a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block" onclick="ChangeMenuSize()">
+                    <i class="icon-paragraph-justify3"></i>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
+                    <i class="icon-bubble-notification"></i>
+                    <span class="d-md-none ml-2">Notificaciones</span>
+                    <span class="badge badge-pill bg-primary-400 ml-auto ml-md-0" id="nav_bar_notify_span"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-left dropdown-content wmin-md-350">
+                    <div class="dropdown-content-header">
+                        <span class="font-weight-semibold">Notificaciones</span>
+                        <a onclick="NavBar_notify()" class="text-default"><i class="icon-sync"></i></a>
+                    </div>
+
+                    <div class="dropdown-content-body dropdown-scrollable">
+                        <ul class="media-list nav_bar_notify_content" id="nav_bar_notify_content" style="display:none;">
+                        </ul>
+
+                        <ul class="media-list text-center" id="nav_bar_notify_load">
+                            <i class="icon-spinner2 spinner"></i> Cargando notificaciones...
+                        </ul>
+
+                        <ul class="media-list text-center" id="nav_bar_notify_info">
+                            <span id="nav_bar_notify_info_msj"></span>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-content-footer justify-content-center p-0" id="nav_bar_notify_more">
+                        <a class="text-grey pb-2 pt-2 cursor-pointer" onclick="ToPerfil(1)"><i class="icon-menu7  pr-2"></i>Ir a mi perfil</a>-->
+            <!--href="/Profile"-->
+            <!--</div>
+                    </div>
+                </li>
+
+
+            </ul>-->
+
+            <span class=" ml-md-3 mr-md-auto">    </span>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+
+
+                    
+                </li>
+
+                
+
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoADIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDz9rqbP+tb86r3OoNBC0ru5VRyBSyKQeM1nX6NLbSIoLEjgAdcc19HUk4xbRyxV3YrnVr6+l22dtJJ/wABLE/lUv2nUIFDX9lPCn98owA/OuxsE1HR4bW1i083EIABmSQJ+mKmvYNQ1O4mtWijFqRhuCWYH0O4Yr53+0qynfoe5HLIOF7u5yCz7sEPkEcHNTbyR1qhPZy6VfSWr52qx2E91ycGp43yMmvfo1VUgpLqePUg4ScWWMj1P50U3ccdaK2My5LjFUjL5MqSLjcjBhn2p17eRwr8zKCfesOfUw+QgY++KxrVYJWkyoJ3uj1Kx1aPUtFBjxHITt2k/d9s0lrctbPJJcTKd3G0Dn9apeAdS8M3vhK8sdckjtL21ZpIpQ4R5VIzgbiAxyCMemKXwLqeiTXN5Lq2nyo8LBbdpZcxPJ12EYBL8cDkEZ46Z+ZnhbzfLsz6Gnj0qa5tzjNXv2vtauHZVUI5QcDJAJ6+9MibjtVfVP7TvNWu9TOnXKR3dw8i5gIHzfPgcYztOfpzTN17BDHNcWNxHDLny5ChAbHXBPXFe3h69KEVDax4lVSnNyNHPstFUDfIpwXwRwQV6UV2e1h3MeWRTs9UuLKeS4jIad0KeY+SVB6498ZH0Jro31K3Edm0V1YWgs4h5LQRu7I7L5wGGdukhZM9jyRwNpRXhSZ0p2Kl54iumsYYF1YTJBEixIsAQoWwWGdvIXYoyTkELjgcaB1jSP7XhQ6vetapcKY7kRIDFH5Cofl8vIYFUXI67M4BwSUUWHzMzLXxHO8UkV5eN5YWSZNsEeTMenO0kgssZbOMgHqcZxrjUry5CrLOSi/dRQFVfXAHAz3x1ooosJtkLyvLI0kjs8jkszMcliepJoooqrsD/9k=" class="rounded-circle mr-2" width="30" height="30" alt="">
+                        <span>ALEJANDRO ACEVEDO</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="/Profile" class="dropdown-item"><i class="icon-user-plus"></i> Mi perfil</a>
+                        <a onclick="ToPerfil(2)" class="dropdown-item"><i class="icon-comment-discussion"></i> Mensajes <span class="badge badge-pill bg-blue ml-auto" id="nav_bar_message_span_2" style="display:none;">3</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/Login/Out" class="dropdown-item"><i class="icon-switch2"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+	<!-- /main navbar -->
+
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main sidebar -->
+		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
+
+			<!-- Sidebar mobile toggler -->
+			<div class="sidebar-mobile-toggler text-center">
+				<a href="#" class="sidebar-mobile-main-toggle">
+					<i class="icon-arrow-left8"></i>
+				</a>
+				Navigation
+				<a href="#" class="sidebar-mobile-expand">
+					<i class="icon-screen-full"></i>
+					<i class="icon-screen-normal"></i>
+				</a>
+			</div>
+			<!-- /sidebar mobile toggler -->
+
+
+			<!-- Sidebar content -->
+			<div class="sidebar-content">
+
+                <!-- User menu -->
+                <div class="sidebar-user">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="mr-3">
+                                <a href="#"><img id="layout_img_src" src="data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoADIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDz9rqbP+tb86r3OoNBC0ru5VRyBSyKQeM1nX6NLbSIoLEjgAdcc19HUk4xbRyxV3YrnVr6+l22dtJJ/wABLE/lUv2nUIFDX9lPCn98owA/OuxsE1HR4bW1i083EIABmSQJ+mKmvYNQ1O4mtWijFqRhuCWYH0O4Yr53+0qynfoe5HLIOF7u5yCz7sEPkEcHNTbyR1qhPZy6VfSWr52qx2E91ycGp43yMmvfo1VUgpLqePUg4ScWWMj1P50U3ccdaK2My5LjFUjL5MqSLjcjBhn2p17eRwr8zKCfesOfUw+QgY++KxrVYJWkyoJ3uj1Kx1aPUtFBjxHITt2k/d9s0lrctbPJJcTKd3G0Dn9apeAdS8M3vhK8sdckjtL21ZpIpQ4R5VIzgbiAxyCMemKXwLqeiTXN5Lq2nyo8LBbdpZcxPJ12EYBL8cDkEZ46Z+ZnhbzfLsz6Gnj0qa5tzjNXv2vtauHZVUI5QcDJAJ6+9MibjtVfVP7TvNWu9TOnXKR3dw8i5gIHzfPgcYztOfpzTN17BDHNcWNxHDLny5ChAbHXBPXFe3h69KEVDax4lVSnNyNHPstFUDfIpwXwRwQV6UV2e1h3MeWRTs9UuLKeS4jIad0KeY+SVB6498ZH0Jro31K3Edm0V1YWgs4h5LQRu7I7L5wGGdukhZM9jyRwNpRXhSZ0p2Kl54iumsYYF1YTJBEixIsAQoWwWGdvIXYoyTkELjgcaB1jSP7XhQ6vetapcKY7kRIDFH5Cofl8vIYFUXI67M4BwSUUWHzMzLXxHO8UkV5eN5YWSZNsEeTMenO0kgssZbOMgHqcZxrjUry5CrLOSi/dRQFVfXAHAz3x1ooosJtkLyvLI0kjs8jkszMcliepJoooqrsD/9k=" width="38" height="38" class="rounded-circle" alt=""></a>
+                            </div>
+
+                            <div class="media-body">
+                                <div class="media-title font-weight-semibold">ALEJANDRO ACEVEDO</div>
+                                <div class="font-size-xs opacity-50">
+                                    Personal
+                                </div>
+                            </div>
+
+                            <div class="ml-3 align-self-center">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+                <!-- Main navigation -->
+                <div class="card card-sidebar-mobile">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion" id="nav_bar_principal">
+
+
+
+<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">MÓDULOS</div> <i class="icon-menu" title="Main"></i></li>
+                            <li class="nav-item">
+                                <a id="nav_main_dashboard" href="/Dashboard" class="nav-link active">
+                                    <i class="icon-home4"></i>
+                                    <span>Dashboard</span>
+
+                                    <span id="span_count_menu_3" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_salary" href="/Salary" class="nav-link">
+                                    <i class="icon-price-tag"></i>
+                                    <span>Liquidaciones</span>
+
+                                    <span id="span_count_menu_19" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_benefits" href="/Benefits" class="nav-link">
+                                    <i class="icon-thumbs-up3"></i>
+                                    <span>Beneficios</span>
+
+                                    <span id="span_count_menu_6" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_contracts" href="/Contracts" class="nav-link">
+                                    <i class="icon-stack-text"></i>
+                                    <span>Contratos</span>
+
+                                    <span id="span_count_menu_7" style="" class="badge badge-pill bg-blue ml-auto">1</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_valorizer" href="/Valorizers" class="nav-link">
+                                    <i class="icon-file-stats"></i>
+                                    <span>Valorizadores</span>
+
+                                    <span id="span_count_menu_21" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">MI PERFIL</div> <i class="icon-menu" title="Main"></i></li>
+                            <li class="nav-item">
+                                <a id="nav_main_profile" href="/Profile" class="nav-link">
+                                    <i class="icon-user-plus"></i>
+                                    <span>Perfil de usuario</span>
+
+                                    <span id="span_count_menu_11" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_exams" href="/Exams" class="nav-link">
+                                    <i class="icon-aid-kit"></i>
+                                    <span>Exámenes médicos</span>
+
+                                    <span id="span_count_menu_12" style="" class="badge badge-pill bg-blue ml-auto">5</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_titles" href="/Titles" class="nav-link">
+                                    <i class="icon-graduation2"></i>
+                                    <span>Títulos</span>
+
+                                    <span id="span_count_menu_13" style="" class="badge badge-pill bg-blue ml-auto">2</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_courses" href="/Courses" class="nav-link">
+                                    <i class="icon-certificate"></i>
+                                    <span>Cursos</span>
+
+                                    <span id="span_count_menu_14" style="" class="badge badge-pill bg-blue ml-auto">49</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_vaccines" href="/TravelDocuments" class="nav-link">
+                                    <i class="icon-vcard"></i>
+                                    <span>Documentos de viaje</span>
+
+                                    <span id="span_count_menu_16" style="" class="badge badge-pill bg-blue ml-auto">4</span>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nav_main_certificates" href="/Certificates" class="nav-link">
+                                    <i class="icon-profile"></i>
+                                    <span>Certificados</span>
+
+                                    <span id="span_count_menu_18" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">OTROS</div> <i class="icon-menu" title="Main"></i></li>
+                            <li class="nav-item">
+                                <a id="nav_main_library" href="/Library" class="nav-link">
+                                    <i class="icon-books"></i>
+                                    <span>Biblioteca</span>
+
+                                    <span id="span_count_menu_17" style="display:none;" class="badge badge-pill bg-blue ml-auto"></span>
+
+                                </a>
+                            </li>
+
+
+
+
+                    </ul>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+			
+		</div>
+		<!-- /main sidebar -->
+
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+
+            <!-- page header v2 -->
+            <div class="page-header-crew">
+                <div class="page-header-crew-content page-title d-flex header-elements-md-inline">
+                    <div class="page-title  d-flex">
+                        <div class="breadcrumb">
+                            <h4>
+                                <i class="icon-home4 icon-2x text-white pb-1"></i>&nbsp;&nbsp;
+                                <span class="breadcrumb-item page-header-crew-title">  Dashboard</span>
+                            </h4>
+                        </div>
+
+                        <a href="#" class="header-elements-toggle text-default d-md-none"></a>
+                    </div>
+
+                    <div class="header-elements d-none">
+                        <div class="breadcrumb justify-content-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page header v2 -->
+            <!-- Content area -->
+            <div class="content">
+                
+
+
+
+<div class=" row">
+    <!--embarco-->
+    
+
+    <!--desembarco-->
+    
+</div>
+
+<div class="row">    
+
+    <div class="col-xs-12 col-lg-6">
+        <div class="row">
+            <!-- Franquias -->
+            
+
+            <!-- Feriados -->
+            
+
+            <!-- Feriados -->
+            
+
+
+            <!--notificaciones-->
+            <div class="col-md-12" id="card_db_notify" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary">
+                                    <i class="icon-bubble-notification pr-2"></i> Cápsula informativa
+                                    <span class="badge badge-pill bg-blue ml-1" id="span_card_db_notify" style="">3</span>
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_notify_body" style="">
+                            
+                        	<div class="table-responsive">
+								<table class="table text-nowrap">
+									<thead>
+										<tr>
+											<th style="width: 20%">Fecha</th>
+											<th style="width: 60px">Description</th>
+											<th class="text-center" style="width: 20%;"></th>
+										</tr>
+									</thead>
+									<tbody>
+										
+
+										<tr>
+											<td class="text-left">
+												<h6 class="mb-0">12</h6>
+												<div class="font-size-sm text-muted line-height-1">Nov/22</div>
+											</td>
+											<td>
+												<div class="d-flex align-items-center">													
+													<div>
+														<a href="#" class="text-default font-weight-semibold letter-icon-title">Principios de control de peligros</a>
+														<div class="text-muted font-size-sm"><span class="badge badge-mark border-blue mr-1"></span> v2</div>
+													</div>
+												</div>
+											</td>											
+											<td class="text-center">
+												<a onclick="visualizarVideo('Principios de control de peligros','v3')" class="btn bg-blue-400 btn-sm"><i class="icon-eye mr-2"></i> Visualizar</a>
+											</td>
+										</tr>	
+
+										<tr>
+											<td class="text-left">
+												<h6 class="mb-0">25</h6>
+												<div class="font-size-sm text-muted line-height-1">Ago/22</div>
+											</td>
+											<td>
+												<div class="d-flex align-items-center">													
+													<div>
+														<a href="#" class="text-default font-weight-semibold letter-icon-title">Principios de seguridad</a>
+														<div class="text-muted font-size-sm"><span class="badge badge-mark border-blue mr-1"></span> v1</div>
+													</div>
+												</div>
+											</td>											
+											<td class="text-center">
+												<a onclick="visualizarVideo('Principios de seguridad','v1')" class="btn bg-blue-400 btn-sm"><i class="icon-eye mr-2"></i> Visualizar</a>
+											</td>
+										</tr>	
+
+										<tr>
+											<td class="text-left">
+												<h6 class="mb-0">22</h6>
+												<div class="font-size-sm text-muted line-height-1">Ago/22</div>
+											</td>
+											<td>
+												<div class="d-flex align-items-center">													
+													<div>
+														<a href="#" class="text-default font-weight-semibold letter-icon-title">Principios de control de peligros</a>
+														<div class="text-muted font-size-sm"><span class="badge badge-mark border-blue mr-1"></span> v2</div>
+													</div>
+												</div>
+											</td>											
+											<td class="text-center">
+												<a onclick="visualizarVideo('Principios de control de peligros','v2')" class="btn bg-blue-400 btn-sm"><i class="icon-eye mr-2"></i> Visualizar</a>
+											</td>
+										</tr>
+
+
+
+									</tbody>
+								</table>
+							</div>
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_notify_footer" style="">
+                        <span>
+
+                        </span>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!--notificaciones-->
+            <div class="col-md-12" id="card_db_notify" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary">
+                                    <i class="icon-bubble-notification pr-2"></i> Nuevas notificaciones
+                                    <span class="badge badge-pill bg-blue ml-1" id="span_card_db_notify" style="">10</span>
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_notify_body" style="">
+
+                            <div class="tab-content card-body">
+                                <div class="tab-pane active fade show" id="messages-tue">
+                                    <ul class="media-list" id="card_db_notify_news"><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Biblioteca de documentos Humboldt</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>08-11-2022 09:28:10</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Liberación liquidaciones de sueldo</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>08-07-2022 10:08:21</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Liberación liquidaciones de sueldo</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>08-06-2022 10:15:49</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Liberación liquidaciones de sueldo</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>01-06-2022 17:44:34</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Liberación liquidaciones de sueldo</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>06-04-2022 08:42:39</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Liberación liquidaciones de sueldo</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>06-12-2021 17:41:31</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Biblioteca de documentos Humboldt</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>23-11-2021 09:43:45</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Beneficios Personal de Humboldt</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>23-11-2021 09:43:41</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Biblioteca de documentos Humboldt</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>22-11-2021 23:24:17</div></li><li class="media"><div class="mr-3 position-relative"><a class="btn bg-blue  rounded-round btn-icon btn-sm"><span class="letter-icon">M</span></a></div><div class="media-body"><div class="d-flex justify-content-between"><span class="text-primary">Beneficios Personal de Humboldt</span><span class="font-size-sm text-muted"><span class="badge badge-warning">Nueva</span></span></div>22-11-2021 23:24:11</div></li></ul>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="media-body text-center" id="card_db_notify_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando notificaciones...
+                        </div>
+                        <div class="media-body" id="card_db_notify_nfo" style="display: none;">
+                            <span id="card_db_notify_nfo_info"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_notify_footer" style="">
+                        <span>
+
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a onclick="ToPerfil(1)" class="btn bg-blue-400 btn-sm"><i class="icon-user-plus mr-2"></i> Ir a perfil</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+            <!--mensajes-->
+            <div class="col-md-12" id="card_db_msj" style="">
+                <div class="card border-left-3 border-left-info  rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-info">
+                                    <i class="icon-bubbles4 pr-2"></i> Mensajes sin leer
+                                    <span class="badge badge-pill bg-info ml-1" id="span_card_db_msj" style=""></span>
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_msj_body" style="display: none;">
+
+                            <div class="tab-content card-body">
+                                <div class="tab-pane active fade show" id="messages-tue">
+                                    <ul class="media-list" id="card_db_msj_news">
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="media-body text-center" id="card_db_msj_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando mensajes...
+                        </div>
+                        <div class="media-body" id="card_db_msj_nfo" style="">
+                            <span id="card_db_msj_nfo_info">No hay nuevos mensajes</span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_msj_footer" style="">
+                        <span>
+
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a onclick="ToPerfil(2)" class="btn bg-info-400 btn-sm"><i class="icon-user-plus mr-2"></i> Ir a perfil</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-xs-12  col-lg-6">
+
+        <div class="row">
+            <!--Travel documents-->
+            <div class="col-xs-12 col-xl-6" id="card_db_travelDocuments" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary"><i class="icon-vcard pr-2"></i> Documentos de viaje</h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_travelDocuments_body" style="">
+                            <div class="d-flex justify-content-between">
+                                Registrados
+                                <span class="font-size-sm"><span class="badge bg-primary" id="card_db_travelDocuments_total">4</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                A tiempo de renovación
+                                <span class="font-size-sm"><span class="badge bg-success" id="card_db_travelDocuments_atiempo">3</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Próximos a vencer
+                                <span class="font-size-sm"><span class="badge bg-warning" id="card_db_travelDocuments_prox">0</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Vencidos
+                                <span class="font-size-sm"><span class="badge bg-danger" id="card_db_travelDocuments_vencidos">1</span></span>
+                            </div>
+                        </div>
+                        <div class="media-body text-center" id="card_db_travelDocuments_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando datos...
+                        </div>
+                        <div class="media-body" id="card_db_travelDocuments_nfo" style="display: none;">
+                            <span id="card_db_travelDocuments_nfo_info"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_travelDocuments_footer" style="">
+                        <span>
+                            <i class="icon-history"></i> Última actualización
+                            <span class="font-weight-semibold" id="card_db_travelDocuments_lastUpdate">Sincronizado con CREW</span>
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a href="/TravelDocuments/Index" class="btn bg-blue-400 btn-sm"><i class="icon-info22 mr-2"></i> Más información</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Titulos-->
+            <div class="col-xs-12 col-xl-6" id="card_db_titles" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary"><i class="icon-graduation2 pr-2"></i> Títulos</h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_titles_body" style="">
+                            <div class="d-flex justify-content-between">
+                                Registrados
+                                <span class="font-size-sm"><span class="badge bg-primary" id="card_db_titles_total">2</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                A tiempo de renovación
+                                <span class="font-size-sm"><span class="badge bg-success" id="card_db_titles_atiempo">2</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Próximos a vencer
+                                <span class="font-size-sm"><span class="badge bg-warning" id="card_db_titles_prox">0</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Vencidos
+                                <span class="font-size-sm"><span class="badge bg-danger" id="card_db_titles_vencidos">0</span></span>
+                            </div>
+                        </div>
+                        <div class="media-body text-center" id="card_db_titles_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando datos...
+                        </div>
+                        <div class="media-body" id="card_db_titles_nfo" style="display: none;">
+                            <span id="card_db_titles_nfo_info"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_titles_footer" style="">
+                        <span>
+                            <i class="icon-history"></i> Última actualización
+                            <span class="font-weight-semibold" id="card_db_titles_lastUpdate">Sincronizado con CREW</span>
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a href="/Titles/Index" class="btn bg-blue-400 btn-sm"><i class="icon-info22 mr-2"></i> Más información</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cursos-->
+            <div class="col-xs-12 col-xl-6" id="card_db_courses" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary"><i class="icon-certificate pr-2"></i> Cursos</h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_courses_body" style="">
+                            <div class="d-flex justify-content-between">
+                                Registrados
+                                <span class="font-size-sm"><span class="badge bg-primary" id="card_db_courses_total">49</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                A tiempo de renovación
+                                <span class="font-size-sm"><span class="badge bg-success" id="card_db_courses_atiempo">44</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Próximos a vencer
+                                <span class="font-size-sm"><span class="badge bg-warning" id="card_db_courses_prox">0</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Vencidos
+                                <span class="font-size-sm"><span class="badge bg-danger" id="card_db_courses_vencidos">5</span></span>
+                            </div>
+                        </div>
+                        <div class="media-body text-center" id="card_db_courses_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando datos...
+                        </div>
+                        <div class="media-body" id="card_db_courses_nfo" style="display: none;">
+                            <span id="card_db_courses_nfo_info"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_courses_footer" style="">
+                        <span>
+                            <i class="icon-history"></i> Última actualización
+                            <span class="font-weight-semibold" id="card_db_courses_lastUpdate">Sincronizado con CREW</span>
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a href="/Courses/Index" class="btn bg-blue-400 btn-sm"><i class="icon-info22 mr-2"></i> Más información</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Examenes-->
+            <div class="col-xs-12 col-xl-6" id="card_db_exams" style="">
+                <div class="card border-left-3 border-left-primary rounded-left-0">
+                    <div class="card-body">
+                        <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                            <div>
+                                <h6 class="font-weight-semibold text-primary"><i class="icon-aid-kit pr-2"></i> Exámenes médicos</h6>
+                            </div>
+                        </div>
+
+                        <div class="media-body" id="card_db_exams_body" style="">
+                            <div class="d-flex justify-content-between">
+                                Registrados
+                                <span class="font-size-sm"><span class="badge bg-primary" id="card_db_exams_total">5</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                A tiempo de renovación
+                                <span class="font-size-sm"><span class="badge bg-success" id="card_db_exams_atiempo">3</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Próximos a vencer
+                                <span class="font-size-sm"><span class="badge bg-warning" id="card_db_exams_prox">0</span></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                Vencidos
+                                <span class="font-size-sm"><span class="badge bg-danger" id="card_db_exams_vencidos">2</span></span>
+                            </div>
+                        </div>
+                        <div class="media-body text-center" id="card_db_exams_load" style="display: none;">
+                            <i class="icon-spinner2 spinner"></i> Cargando datos...
+                        </div>
+                        <div class="media-body" id="card_db_exams_nfo" style="display: none;">
+                            <span id="card_db_exams_nfo_info"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center text-muted" id="card_db_exams_footer" style="">
+                        <span>
+                            <i class="icon-history"></i> Última actualización
+                            <span class="font-weight-semibold" id="card_db_exams_lastUpdate">Sincronizado con CREW</span>
+                        </span>
+
+                        <ul class="list-inline list-inline-condensed mb-0 mt-2 mt-sm-0">
+                            <li class="list-inline-item">
+                                <a href="/Exams/Index" class="btn bg-blue-400 btn-sm"><i class="icon-info22 mr-2"></i> Más información</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--LOCK-->
+                <div id="lock_read" class="alert bg-info text-white alert-styled-left alert-dismissible" style="display:none;">
+                    <span class="font-weight-semibold">Atención</span> Usted no tiene privilegios de lectura en este menú.
+                </div>
+
+                <!--SYNC-->
+                
+
+
+            </div>
+            <!-- /content area -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Acerca de CREW AutoConsulta
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        © 2021 Construido para <a href="https://www.ultranav.cl" target="_blank"> Ultranav</a>
+                    </span>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        
+                        <li class="nav-item"><a href="/Documentacion/Manual_de_Usuario_Crew_AutoConsulta_V1.0.pdf" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Documentación</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /footer -->
+
+        </div>
+
+	</div>
+	<!-- /page content -->
+
+	<!-- Large modal -->
+	<div id="modal_capsule" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><span class="font-weight-semibold text-primary">Cápsula informativa</span><br> <span id="nameMovie"></span> <span class="badge badge-success" id="versionMovie"></span></h5>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<video id="movieFrame" width="100%" controls autoplay>
+					  <source id="movie1" src="assets/video1.mp4" type="video/mp4">
+					</video>
+
+				</div>
+
+				<div class="modal-footer">
+					<button onclick="stopVideo()" type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /large modal -->
+
+
+	<script>
+		
+	function visualizarVideo(nameMovie, versionMovie){
+		$('#nameMovie').text(nameMovie);
+		$('#versionMovie').text(versionMovie);
+		$("#modal_capsule").modal();
+	}
+
+	function stopVideo(){
+		$('#movieFrame').trigger('pause');
+		
+	}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+dasboard
+
+bloque capsula informativa: 
+tabla: numero/nombre/visualizar
+
